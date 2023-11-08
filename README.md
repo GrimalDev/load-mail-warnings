@@ -19,7 +19,7 @@ curl https://raw.githubusercontent.com/GrimalDev/load-mail-warnings/main/loadwar
 ```sh
 curl https://raw.githubusercontent.com/GrimalDev/load-mail-warnings/main/loadwarn.sh -o loadwarn.sh ; sudo cp loadwarn.sh /opt/homebrew/bin/loadwarn ; sudo rm loadwarn.sh ; sudo chmod +x /opt/homebrew/bin/loadwarn
 ```
-
+---
 **HOW TO**
 > Parameters:
   1. URL to scrap
