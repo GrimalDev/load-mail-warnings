@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# This script sends an email alert if the CPU load is higher than a certain threshold.
+# Verify that all the parameters are passed
+if [ $# -ne 3 ]; then
+    echo "Usage: $(basename $0) <threshold> <from> <to>"
+    exit 1
+fi
+
 # Set the threshold for CPU load
 threshold=$1
 
