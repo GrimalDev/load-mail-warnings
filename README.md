@@ -2,8 +2,8 @@
 
 ## loadwarn.sh :
 
-=> A tool to send a mail if the CPU load/usage gets higher than a cetain threshold.
-=> Usefull when wanting to monitor a cloud based VPS with low resources.
+- A tool to send a mail if the CPU load/usage gets higher than a cetain threshold.
+- Usefull when wanting to monitor a cloud based VPS with low resources.
   
 Install Command:
 
