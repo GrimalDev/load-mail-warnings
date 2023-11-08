@@ -22,5 +22,6 @@ curl https://raw.githubusercontent.com/GrimalDev/load-mail-warnings/main/loadwar
 ---
 **HOW TO**
 > Parameters:
-  1. URL to scrap
-  2. output file name (with extension)
+  1. Threshold <0-5> (the test succeeds if the integer load is strictly higher than this number)
+  2. Email FROM
+  3. Email TO
