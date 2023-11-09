@@ -16,7 +16,7 @@ load_average=${load_average%.*}  # Remove decimal part if present
 
 # Get the process list sorted by CPU usage (in descending order)
 # Only the first 10 lines are needed
-processes=$(ps -eo pcpu,pid,user,args | sort -k 1 -r | head -n 10)
+processes=$(ps uax --sort=-pcpu)
 
 # Check if the load_average is greater than the threshold using integer comparison
 if [ "$load_average" -gt "$threshold" ]; then
