@@ -25,7 +25,7 @@ if [ "$load_average" -gt "$threshold" ]; then
     subject="High CPU Load Alert"
 
     message="CPU load is currently $load_average, which is higher than the threshold of $threshold."
-    message="$message\n\nTop 10 processes by CPU usage:\n$processes"
+    message="$message<br>br>Top 10 processes by CPU usage:<br>$processes"
 
     echo "Above threshold load !"
     echo "$message" | mail -s "$subject" -aFrom:$fromName\<$2\> $3
