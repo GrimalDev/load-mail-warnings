@@ -22,12 +22,11 @@ curl https://raw.githubusercontent.com/GrimalDev/load-mail-warnings/main/loadwar
 ---
 **HOW TO**
 ### Parameters
-  
-  First param: Threshold <0-5> (the test succeeds if the integer load is strictly higher than this number)
+  - First param: Threshold <0-5> (the test succeeds if the integer load is strictly higher than this number)
+    
+  Then, 
   - **OPTION 1:**
-    
-    Second param: Email FROM
-    Third param: Email TO
+    - Second param: Email FROM
+    - Third param: Email TO
   - **OPTION 2:**
-    
-    econd param: --stdout-body (to print the body and not send the mail)
+    - Second param: --stdout-body (to print the body and not send the mail)
