@@ -16,7 +16,7 @@ load_average=${load_average%.*}  # Remove decimal part if present
 
 # Get the process list sorted by CPU usage (in descending order)
 # Only the first 10 lines are needed
-processes=$(ps uax --sort=-pcpu)
+processes=$(ps -eo pcpu,pid,user,args | sort -k 1 -r | head -n 10)
 
 # Check if the load_average is greater than the threshold using integer comparison
 if [ "$load_average" -gt "$threshold" ]; then
@@ -25,7 +25,13 @@ if [ "$load_average" -gt "$threshold" ]; then
     subject="High CPU Load Alert"
 
     message="CPU load is currently $load_average, which is higher than the threshold of $threshold."
-    message="$message<br>br>Top 10 processes by CPU usage:<br>$processes"
+    message="$message\n\nTop 10 processes by CPU usage:\n$processes"
+
+    # if --stdout-body param is passed, then print the message to stdout and exit
+    if [ "$2" == "--stdout-body" ]; then
+        echo -e "$message"
+        exit 0
+    fi
 
     echo "Above threshold load !"
     echo "$message" | mail -s "$subject" -aFrom:$fromName\<$2\> $3
